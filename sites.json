@@ -1,0 +1,11 @@
+{
+  "webringInfo": [
+    {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
+  ],
+  "webringSites": [
+    { "siteOwner": "Red", "siteName": "aaa", "siteURL": "https://aaa.com", "siteTags": "one, four", "siteDescription": "Red's blog"},
+    { "siteOwner": "Blue", "siteName": "bbb", "siteURL": "https://bbb.com", "siteTags": "two, five", "siteDescription": "I like bacon"},
+    { "siteOwner": "Green", "siteName": "ccc", "siteURL": "https://ccc.com", "siteTags": "three, six", "siteDescription": "touch grass"}
+  
+  ]
+}

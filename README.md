@@ -225,7 +225,7 @@ UNIQUE TO YOUR WEBRING Example: AquaRing3827*/
 
   
 ## HTML Redirect
-`html-redirect`
+`html-redirect.js`
 
 ```js
 /* Oring html-redirect v3.0 Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (G@graycot.dev)(https://graystea.neocities.org/)(https://graycot.dev/).

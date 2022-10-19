@@ -62,7 +62,7 @@ The HTML webring is static and does not contain dynamic data. The styling and st
   The script will look at a list of member websites and find the index of the site it is currently running on. The script will then find the previous site in the list, the next site in the list, and a random site in the list. Once the calculations are done, it will insert a snippet of HTML code into the webpage at the location of "ring0000" (You will rename this so it is a value unique to your webring). The script will also insert a snippet of CSS code to style the HTML and make it look nice.
   
 ## JavaScript Redirect:
-
+`js-redirect.js`
 
 ```js
 /* Oring js-redirect v3.0 Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (G@graycot.dev)(https://graystea.neocities.org/)(https://graycot.dev/).
@@ -224,7 +224,8 @@ UNIQUE TO YOUR WEBRING Example: AquaRing3827*/
 
 
   
-<h2 id="HTMLRedirect">HTML Redirect</h2>
+## HTML Redirect
+`html-redirect`
 
 ```js
 /* Oring html-redirect v3.0 Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (G@graycot.dev)(https://graystea.neocities.org/)(https://graycot.dev/).
@@ -302,6 +303,22 @@ function webring(data) {
   }
 
 };
+```
+## Member Sites and Ring Data
+`sites.json`
+
+```json
+{
+  "webringInfo": [
+    {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
+  ],
+  "webringSites": [
+    { "siteOwner": "Red", "siteName": "aaa", "siteURL": "https://aaa.com", "siteTags": "one, four", "siteDescription": "Red's blog"},
+    { "siteOwner": "Blue", "siteName": "bbb", "siteURL": "https://bbb.com", "siteTags": "two, five", "siteDescription": "I like bacon"},
+    { "siteOwner": "Green", "siteName": "ccc", "siteURL": "https://ccc.com", "siteTags": "three, six", "siteDescription": "touch grass"}
+  
+  ]
+}
 ```
 //TODO Oct 19 2022 - Include <noscript></noscript> in html-redirect which asks the Visitor to turn on JS (and explains why) or offer a link to manually navigate the WebRing via a github page
 //TODO Oct 19 2022 - Clean up documentation, Create diagram of relationship between Ring Mater, Member Site, and Visitor. Upload Oring folder containing all of the required code to allow RingMasters to drag and drop the necessary files onto their server.

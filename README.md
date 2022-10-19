@@ -320,6 +320,11 @@ function webring(data) {
   ]
 }
 ```
-//TODO Oct 19 2022 - Include <noscript></noscript> in html-redirect which asks the Visitor to turn on JS (and explains why) or offer a link to manually navigate the WebRing via a github page
+The JSON is fairly self-explanatory. **Note, after every Member Site entry, there MUST be a comma EXCEPT for the last Member Site entry in-which there MUST NOT have a comma.**
+
+--- 
+Self notes: 
+
+*//TODO Oct 19 2022 - Include <noscript></noscript> in html-redirect which asks the Visitor to turn on JS (and explains why) or offer a link to manually navigate the WebRing via a github page
 //TODO Oct 19 2022 - Clean up documentation, Create diagram of relationship between Ring Mater, Member Site, and Visitor. Upload Oring folder containing all of the required code to allow RingMasters to drag and drop the necessary files onto their server.
-//TODO Oct 19 2022 - Add Iframe browsing capability from a Ring Master's page to allow for an alternative way for visitors to interact with member sites. Bonus: automatically repair ring structure if a member site goes offline.
+//TODO Oct 19 2022 - Add Iframe browsing capability from a Ring Master's page to allow for an alternative way for visitors to interact with member sites. Bonus: automatically repair ring structure if a member site goes offline.*

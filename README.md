@@ -198,9 +198,6 @@ UNIQUE TO YOUR WEBRING Example: AquaRing3827*/
   document.head.appendChild(styleSheet)
 
 };
-
-
-/* */
 ```
 
 ## HTML Widget:

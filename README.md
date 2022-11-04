@@ -308,14 +308,15 @@ function webring(data) {
 `sites.json`
 
 ```json
+
 {
   "webringInfo": [
     {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
   ],
   "webringSites": [
-    { "siteOwner": "Red", "siteName": "aaa", "siteURL": "https://aaa.com", "siteTags": "one, four", "siteDescription": "Red's blog"},
-    { "siteOwner": "Blue", "siteName": "bbb", "siteURL": "https://bbb.com", "siteTags": "two, five", "siteDescription": "I like bacon"},
-    { "siteOwner": "Green", "siteName": "ccc", "siteURL": "https://ccc.com", "siteTags": "three, six", "siteDescription": "touch grass"}
+    { "siteOwner": "Red", "siteName": "Radium's rotation", "siteURL": "https://example.com/1", "siteTags": "Red, birds", "siteShortDescription": "111", "siteLongDescription": "1111111"},
+    { "siteOwner": "Blue", "siteName": "Bird's bounties", "siteURL": "https://example.com/2", "siteTags": "Blue, bacon", "siteShortDescription": "222", "siteLongDescription": "2222222"},
+    { "siteOwner": "Green", "siteName": "Greg's grains", "siteURL": "https://example.com/3", "siteTags": "Green, Grass", "siteShortDescription": "333", "siteLongDescription": "3333333"}
   
   ]
 }

@@ -1,10 +1,16 @@
-# Oring - Create your own WebRing
+# Oring - Open source webring
 
 ## What is a webring?
 
   A webring (or web ring) is a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social. They were popular in the 1990s and early 2000s, particularly among amateur websites.
 
-  To be a part of the webring, each site has a common navigation bar. It contains links to the previous and next site. By selecting next (or previous) repeatedly, the user will eventually reach the site they started at. This is the origin of the term webring. The select-through route around the ring is usually supplemented by a central site with links to all member sites; this prevents the ring from breaking completely if a member site goes offline. The advantage of a webring is that if the user is interested in the topic on one website, they can quickly connect to another website on the same topic. Webrings usually have a moderator who decides which pages to include in the webring. After approval, webmasters add their pages to the ring by 'linking in' to the ring; this requires adding the necessary HTML or JavaScript widget to their site.
+  To be a part of the webring, each site has a common navigation bar. It contains links to the previous and next site in the web ring. By selecting next (or previous) repeatedly, the user will eventually reach the site they started at. This is the origin of the term webring.
+
+ The select-through route around the ring is usually supplemented by a central site with links to all member sites; this prevents the ring from breaking completely if a member site goes offline.
+
+The advantage of a webring is that if a visitor is interested in the topic on one website, they can quickly connect to another similar website. This shared traffic is beneficial to smaller Member Sites.
+
+Member sites add their pages to the ring by 'linking in' to the ring; this requires adding the necessary HTML widget to their site. Once completed, they contact the Ring Admin to add their webpage to the list of Member Sites.
 
 *This explaination was borrowed from [Wikipedia](https://en.wikipedia.org/wiki/Webring)*
 
@@ -14,34 +20,31 @@
 
 ## What is Oring?
 
-  Oring is an open source template that anyone can use to create their own webring! Simply follow the instructions on this page and you will have your own unique webring!
+  Oring is an easy to use open source template that allows anyone to create their own webring.
 
-1. The HTML webring runs JavaScript on the Ring Master's Site.
-
-The HTML webring is static and does not contain dynamic data. The styling and structure of the HTML widget is ENTIRELY up to the Member Site.
+  1. upload the files to a static website host. I recommend [Netlify](https://www.netlify.com/).
+  2. Change the values within `webring.json` and `sites.json` to fit your webring
 
 ## HTML Widget
 
-   Membersites will insert this code into the HTML of the webpage they want the HTML widget located.
+   Member sites will insert this code into the HTML body of a webpage.
 
   ```html
-<!-- Replace "RINGMASTER.COM" with the URL of the Ring Master's website -->
+<!-- Replace "RINGADMIN.COM" with the URL of the Ring Master's website -->
     <div>
-      <a href="https://RINGMASTER.COM/Oring/html-redirect.html?action=prev"> < </a>
-      <a href="https://RINGMASTER.COM/Oring/html-redirect.html?action=list"> ... </a>
-      <a href="https://RINGMASTER.COM/Oring/html-redirect.html?action=home"> MYWEBRING </a>
-      <a href="https://RINGMASTER.COM/Oring/html-redirect.html?action=rand"> ? </a>
-      <a href="https://RINGMASTER.COM/Oring/html-redirect.html?action=next"> > </a>
+      <a href="https://RINGADMIN.COM/Oring/webring.html.html?action=prev"> < </a>
+      <a href="https://RINGADMIN.COM/Oring/webring.html.html?action=list"> ... </a>
+      <a href="https://RINGADMIN.COM/Oring/webring.html.html?action=home"> MYWEBRING </a>
+      <a href="https://RINGADMIN.COM/Oring/webring.html.html?action=rand"> ? </a>
+      <a href="https://RINGADMIN.COM/Oring/webring.html.html?action=next"> > </a>
     </div>
   ```
 
-  When a visitor on a member site clicks one of these links, they will be directed to a webpage that the RingMaster (you) control. The page you control will run the <a href="#webring">webring.js</a> script.
+  When a visitor on a member site clicks one of these links, they will be directed to a webpage that the ring admin (you) control. The `webring.html` page will run the `webring.js` script.
 
-  The script will look at a list of member websites and find the index of the member site that the visitor was on. The script will then find the previous site in the list, the next site in the list, and a random site in the list. Once the calculations are done, it will read the the link after `?action=` to determine how and where to redirect the visitor.
+  The script will look at a list of member websites and find the index of the member site that the visitor was on. The script will then find the previous site in the list, the next site in the list, and a random site in the list. Once the calculations are done, it will read the the link fragment after `?action=` to determine how and where to redirect the visitor.
 
-## webring
-
-`webring.js`
+## `webring.js`
 
 ```js
 /* Oring v4.0. Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (g@graycot.dev) (https://graycot.dev/).
@@ -131,9 +134,7 @@ function sites(data) {
 };
 ```
 
-## Data
-
-`webring.json`
+## `webring.json`
 
 ```json
 {
@@ -143,7 +144,7 @@ function sites(data) {
   }
 ```
 
-`sites.json`
+## `sites.json`
 
 ```json
 
@@ -164,10 +165,10 @@ The JSON is fairly self-explanatory. Edit the values to suit your webring. **Not
 
 ## Member list
 
-You can generate a list of the webring members by inserting this HTML fragment: `<div id="member-list"><script async src="member-list.js"></script></div>`  into a webpage. You can modify `member-list.js` to display any data contained within the `webring.json` and `sites.json` files.
+You can generate a list of the webring members by inserting this HTML fragment: `<div id="member-list"><script async src="member-list.js"></script></div>`  into a webpage. You can modify the`member-list.js` script to display any of the data contained within the `webring.json` and `sites.json` files.
 
 ---
 Self notes:
 
-//TODO Nov 4 2022 - Create a diagram of the relationship between Ring Master, Member Site, and Visitor.
-//TODO Nov 4 2022 - Add Iframe browsing capability from a Ring Master's page to allow for an alternative way for visitors to interact with member sites.
+* //TODO Nov 4 2022 - Create a diagram explaining the relationship between Ring Master, Member Site, and Visitor.
+* //TODO Nov 4 2022 - Add Iframe browsing capability on a Ring Master's webpage to allow for an alternative way for visitors to interact with member sites.

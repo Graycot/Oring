@@ -38,7 +38,7 @@ function sites(data) {
 
 for (i = 0; i < data.webringSites.length; i++) {
     list += `
-    <div class="member">
+    <div class="webringMember">
     <ol>
     <li id="siteOwner">${data.webringSites[i].siteOwner}</li>
     <li id="siteName"><a target="_blank" href='${data.webringSites[i].siteURL}'>${data.webringSites[i].siteName.replace(regex, "")}</a></li>

@@ -1,17 +1,31 @@
-/* Oring html-redirect v3.0 Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (G@graycot.dev)(https://graystea.neocities.org/)(https://graycot.dev/).
+/* Oring v4.0. Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (g@graycot.dev) (https://graycot.dev/).
 
 Oring is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (GPLv3+) as published by
 the Free Software Foundation. (http://www.gnu.org/licenses/)*/
 
-// get webring member list
-fetch("./sites.json")
+// get webring data
+fetch("./webring.json")
 .then(response => {
    return response.json();
 })
 .then(data => webring(data));
 
+// get sites list
+fetch("./sites.json")
+.then(response => {
+   return response.json();
+})
+.then(data => sites(data));
+
 function webring(data) {
+  // get webring data webring.json
+  let webringName = data.webringInfo[0].webringName;
+  let webringHome = data.webringInfo[0].webringHome;
+  let webringMemberList = data.webringInfo[0].webringMemberList;
+}
+
+function sites(data) {
 
   // get URL of this member site
   let thisSiteURL = window.location.href;
@@ -25,7 +39,7 @@ function webring(data) {
       thisIndex = i;
       thisSiteName = data.webringSites[thisIndex].siteName;
       break;
-    } 
+    }
   }
   //if this site is not in member list, set index to last member of list
   if (thisIndex == undefined) {
@@ -40,10 +54,6 @@ function webring(data) {
   let previousSiteURL = data.webringSites[previousIndex].siteURL;
   let randomSiteURL = data.webringSites[randomIndex].siteURL;
   let nextSiteURL = data.webringSites[nextIndex].siteURL;
-  // get webring info from JSON data.
-  let webringName = data.webringInfo[0].webringName;
-  let webringHome = data.webringInfo[0].webringHome;
-  let webringMemberList = data.webringInfo[0].webringMemberList;
 
   // Detects whether user clicked the Previous, List, Home, Next, Random, or other link:
   const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -55,7 +65,7 @@ function webring(data) {
   if (thisIndex == null) {
     previousIndex = randomIndex;
     nextIndex = randomIndex;
-  } 
+  }
 
   // Previous, List, Home, Next, Random, or other actions
   if (value == 'prev') {
@@ -65,7 +75,7 @@ function webring(data) {
   } else if (value == 'list') {
       window.location.href = webringMemberList;
   } else if (value == 'home') {
-      window.location.href = webringHome; 
+      window.location.href = webringHome;
   } else if (value == 'rand') {
       window.location.href = randomSiteURL;
   } else {

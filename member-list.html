@@ -1,14 +1,17 @@
-<!-- This is an HTML fragment for the Ring Master to embed in a webpage to display the Member List and member count. Feel free to move things around and apply your own CSS to the list. -->
+<!-- This is an example HTML page calling the member-list.js script to display the member list and member count.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example member list</title>
+</head>
+<body>
+  <div id="member-list"><script async src="member-list.js"></script></div>
+</body>
+</html>
 
-        <div id="member-list">
-          <script async type="module">
-            import { sites } from "./sites.js";
-            const tag = document.getElementById('member-list');
-            const regex = /^https:\/\/|\/$/g; 
-            let list = ""; 
-            let i; 
-            for (i = 0; i < sites.length; i++) {list += `<li><a target="_blank" href='${sites[i]}'>${sites[i].replace(regex, "")}</a></li>`;}
-            tag.insertAdjacentHTML('afterbegin', `<h2 id="list">Member Count: ${i}</h2> <ol>${list}</ol>`);
-          </script>
-        </div>
+
+
 

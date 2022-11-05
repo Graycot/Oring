@@ -169,5 +169,5 @@ You can generate a list of the webring members by inserting this HTML fragment: 
 ---
 Self notes:
 
-//TODO Oct 19 2022 - Clean up documentation, Create diagram of relationship between Ring Mater, Member Site, and Visitor. Upload Oring folder containing all of the required code to allow RingMasters to drag and drop the necessary files onto their server.
-//TODO Oct 19 2022 - Add Iframe browsing capability from a Ring Master's page to allow for an alternative way for visitors to interact with member sites. Bonus: automatically repair ring structure if a member site goes offline.
+//TODO Nov 4 2022 - Create a diagram of the relationship between Ring Master, Member Site, and Visitor.
+//TODO Nov 4 2022 - Add Iframe browsing capability from a Ring Master's page to allow for an alternative way for visitors to interact with member sites.

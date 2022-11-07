@@ -1,6 +1,10 @@
-
 {
     "webringInfo": [
-      {"webringName": "Example Ring", "webringURL": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
+        {
+            "webringName": "Example Ring",
+            "webringURL": "https://example.com/oring/webring.html",
+            "webringHome": "https://example.com/",
+            "webringMemberList": "https://example.com/home#list"
+        }
     ]
-  }
+}

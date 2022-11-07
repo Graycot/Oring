@@ -131,27 +131,49 @@ function sites(data) {
 ## `webring.json`
 
 ```json
+
 {
     "webringInfo": [
-      {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
+        {
+            "webringName": "Example Ring",
+            "webringURL": "https://example.com/oring/webring.html",
+            "webringHome": "https://example.com/",
+            "webringMemberList": "https://example.com/home#list"
+        }
     ]
-  }
+}
 ```
 
 ## `sites.json`
 
 ```json
-
 {
-  "webringInfo": [
-    {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
-  ],
-  "webringSites": [
-    { "siteOwner": "Red", "siteName": "Radium's rotation", "siteURL": "https://example.com/1", "siteTags": "Red, roeus", "siteShortDescription": "111", "siteLongDescription": "1111111"},
-    { "siteOwner": "Blue", "siteName": "Bird's bounties", "siteURL": "https://example.com/2", "siteTags": "Blue, bacon", "siteShortDescription": "222", "siteLongDescription": "2222222"},
-    { "siteOwner": "Green", "siteName": "Greg's grains", "siteURL": "https://example.com/3", "siteTags": "Green, Grass", "siteShortDescription": "333", "siteLongDescription": "3333333"}
-
-  ]
+    "webringSites": [
+        {
+            "siteOwner": "Red",
+            "siteName": "Radium's rotation",
+            "siteURL": "https://example.com/1",
+            "siteTags": "Red, roeus",
+            "siteShortDescription": "111",
+            "siteLongDescription": "1111111"
+        },
+        {
+            "siteOwner": "Blue",
+            "siteName": "Bird's bounties",
+            "siteURL": "https://example.com/2",
+            "siteTags": "Blue, bacon",
+            "siteShortDescription": "222",
+            "siteLongDescription": "2222222"
+        },
+        {
+            "siteOwner": "Green",
+            "siteName": "Greg's grains",
+            "siteURL": "https://example.com/3",
+            "siteTags": "Green, Grass",
+            "siteShortDescription": "333",
+            "siteLongDescription": "3333333"
+        }
+    ]
 }
 ```
 

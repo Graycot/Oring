@@ -4,12 +4,12 @@
 
   A webring (or web ring) is a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social. They were popular in the 1990s and early 2000s, particularly among amateur websites.
 
-  To be a part of the webring, each site has a common navigation bar. It contains links to the previous and next site in the web ring. By selecting next (or previous) repeatedly, the user will eventually reach the site they started at. This is the origin of the term webring.
-
- The select-through route around the ring is usually supplemented by a central site with links to all member sites; this prevents the ring from breaking completely if a member site goes offline.
-
+  To be a part of the webring, each site has a common navigation bar. It contains links to the previous and next site in the web ring. By selecting next (or previous) repeatedly, the user will eventually reach the site they started at. This is the origin of the term webring. 
+  
+ The select-through route around the ring is usually supplemented by a central site with links to all member sites; this prevents the ring from breaking completely if a member site goes offline. 
+ 
 The advantage of a webring is that if a visitor is interested in the topic on one website, they can quickly connect to another similar website. This shared traffic is beneficial to smaller Member Sites.
-
+  
 Member sites add their pages to the ring by 'linking in' to the ring; this requires adding the necessary HTML widget to their site. Once completed, they contact the Ring Admin to add their webpage to the list of Member Sites.
 
 *This explaination was borrowed from [Wikipedia](https://en.wikipedia.org/wiki/Webring)*
@@ -20,10 +20,14 @@ Member sites add their pages to the ring by 'linking in' to the ring; this requi
 
 ## What is Oring?
 
-  Oring is an easy to use open source template that allows anyone to create their own webring.
-
-  1. upload the files to a static website host. I recommend [Netlify](https://www.netlify.com/).
+  Oring is an easy to use free and open source code template to selfhost a webring. 
+  1. Fork the github repo at (https://github.com/Graycot/Oring). 
   2. Change the values within `webring.json` and `sites.json` to fit your webring
+  3. Make a [Netlify](https://www.netlify.com/) account.
+  4. Click **Add new site**, and then click **Import an existing project**
+  5. Connect the site to your forked repo of Oring.
+  6. Now when you add members to the `sites.json` file on your webring repo, Netlify will detect the change and automatically redeploy with the new member list.
+
 
 ## HTML Widget
 
@@ -45,6 +49,7 @@ Member sites add their pages to the ring by 'linking in' to the ring; this requi
   The script will look at a list of member websites and find the index of the member site that the visitor was on. The script will then find the previous site in the list, the next site in the list, and a random site in the list. Once the calculations are done, it will read the the link fragment after `?action=` to determine how and where to redirect the visitor.
 
 ## `webring.js`
+
 
 ```js
 /* Oring v5.0. Copyleft 🄯 ALL WRONGS RESERVED 🄯 Gray (g@graycot.dev) (https://graycot.dev/).
@@ -108,7 +113,6 @@ function sites(data) {
 
     // execute using webring data
     function webring(data) {
-      // get webring data from webring.json
       var webringHome = data.webringInfo[0].webringHome;
       var webringMemberList = data.webringInfo[0].webringMemberList;
 
@@ -130,7 +134,56 @@ function sites(data) {
 
 ```
 
-The JSON is fairly self-explanatory. Edit the values to suit your webring. **Note, after every Member Site entry, there MUST be a comma EXCEPT for the last Member Site entry in-which there MUST NOT have a comma.** *is that convoluted? Yes. Thank JSON for that.*
+## `webring.json`
+
+
+
+```json
+{
+    "webringInfo": [
+      {"webringName": "Example Ring", "webringHome": "https://example.com/home", "webringMemberList": "https://example.com/home#list"}
+    ]
+  }
+```
+
+## `sites.json`
+
+```json
+{
+    "webringSites": [
+        {
+            "siteOwner": "Red",
+            "siteName": "Radium's rotation",
+            "siteURL": "https://example.com/1",
+            "siteTags": "Red, roeus",
+            "siteShortDescription": "111",
+            "siteLongDescription": "1111111"
+        },
+        {
+            "siteOwner": "Blue",
+            "siteName": "Bird's bounties",
+            "siteURL": "https://example.com/2",
+            "siteTags": "Blue, bacon",
+            "siteShortDescription": "222",
+            "siteLongDescription": "2222222"
+        },
+        {
+            "siteOwner": "Green",
+            "siteName": "Greg's grains",
+            "siteURL": "https://example.com/3",
+            "siteTags": "Green, Grass",
+            "siteShortDescription": "333",
+            "siteLongDescription": "3333333"
+        }
+    ]
+}
+```
+
+The JSON is fairly self-explanatory. Edit the values to suit your webring. **Note, after every Member Site entry, there MUST be a comma EXCEPT for the last Member Site, in-which there MUST NOT be a comma. Additionally, after every member attribute there MUST be a comma EXCEPT for the last member attribute, in-which there MUST NOT be a comma,** 
+
+![](https://docs.graycot.dev/uploads/c663551f-225d-4548-a5e8-19a8e8e62087.png)
+
+*is that janky and annoying?* **Yes, yes it is**. Thank JSON for that.
 
 ## Member list
 
@@ -141,3 +194,4 @@ Self notes:
 
 * //TODO Nov 4 2022 - Create a diagram explaining the relationship between Ring Master, Member Site, and Visitor.
 * //TODO Nov 4 2022 - Add Iframe browsing capability on a Ring Master's webpage to allow for an alternative way for visitors to interact with member sites.
+* //TODO Jan 20 2023 - Add fallback incase there is a formatting error in the sites.json that prevents the script from reading data.

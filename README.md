@@ -188,10 +188,3 @@ The JSON is fairly self-explanatory. Edit the values to suit your webring. **Not
 ## Member list
 
 You can generate a list of the webring members by inserting this HTML fragment: `<div id="member-list"><script async src="member-list.js"></script></div>`  into a webpage. You can modify the`member-list.js` script to display any of the data contained within the `webring.json` and `sites.json` files.
-
----
-Self notes:
-
-* //TODO Nov 4 2022 - Create a diagram explaining the relationship between Ring Master, Member Site, and Visitor.
-* //TODO Nov 4 2022 - Add Iframe browsing capability on a Ring Master's webpage to allow for an alternative way for visitors to interact with member sites.
-* //TODO Jan 20 2023 - Add fallback incase there is a formatting error in the sites.json that prevents the script from reading data.
